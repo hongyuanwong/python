@@ -1,0 +1,22 @@
+astronauts = ["alice", "ben", "charlie", "diana", "eric"]
+trained_astronauts = ["alice", "charlie", "diana" "eric"]
+commanders = ["alice", "eric"]
+mission_age_min = 18
+mission_age_max = 60
+ages = [34, 17, 42, 29, 61]
+
+for index, astro in enumerate(astronauts):
+    #print(f"ages: {ages[index]}, Astro: {astro}")
+     
+    if ages[index] < mission_age_min:
+        print(f"{astro}: Not eligible - trainining incomplete")
+    elif ages[index] > mission_age_max:
+        print(f"{astro}: Not eligible - age requirement")
+    else:
+        if astro in commanders:
+            print(f"{astro}: Mission Commander")
+        else:
+            print(f"{astro}: Mission Specialist")
+            
+     
+    

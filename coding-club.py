@@ -40,19 +40,24 @@ for key, value in club.items():
 new_teacher = club.get("teacher", "not assigned")
 print(f"Teacher: {new_teacher}")
 members['alice']['points'] = 20
-members['alice']['badge'] = 'Gold'
 a = members['alice']
 loopy = ", ".join(a['languages'])
-print(f"Alice | Age: {a['age']} | Points: {a['points']} | Languages: {loopy} | Badge: {a['badge']}")
-members['ben']['languages'] = 'python'
-members['ben']['badge'] = 'beginner'
 b = members['ben']
-
 fat_loopy = ", ".join(a['languages'])
-print(f"Ben | Age: {b['age']} | Points: {b['points']} |  Languages: {b['languages']} | Badge: {b['badge']}")
+print(f"Ben | Age: {b['age']} | Points: {b['points']} |  Languages: {b['languages']} | Badge: {info['badge']}")
+members['[daniel]'] = {}
+members['[daniel]']['age'] = 12
+members['[daniel]']['languages'] = 'python'
+members['[daniel]']['points'] = 0 
+dingus = members['[daniel]']
 
-
-    
-    
-
-
+print(f"Daniel | Age: {dingus['age']} | Points: {dingus['points']} | Languages: {dingus['languages']} | Badge: {info['badge']}")
+for name, info in members.items():
+    if info['points'] >= 20:
+        info['badge'] = 'Gold'
+    elif info['points'] >= 10:
+        info['badge'] = 'Silver'
+    else:info['badge'] = 'Beginner'
+    print(f"{name.title()} Badge: {info['badge']}")
+    print(f"Alice | Age: {a['age']} | Points: {a['points']} | Languages: {loopy} | Badge: {info['badge']}")
+    print(f"Ben | Age: {b['age']} | Points: {b['points']} |  Languages: {b['languages']} | Badge: {info['badge']}")
